@@ -6,7 +6,7 @@ moduleForAcceptance('Acceptance | homepage');
 test('should list available items.', function (assert) {
   visit('/');
   andThen(function () {
-    assert.equal(find('.listing').length, 3, 'should see 3 listings');
+    assert.equal(find('.item-card').length, 7, 'should see 7 listings');
   });
 });
 
