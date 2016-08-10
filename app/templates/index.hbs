@@ -1,26 +1,25 @@
-<!-- <div class="jumbo">
-  <div class="right tomster"></div>
-  <h2>Welcome!</h2>
-  <p>
-    We hope you find exactly what you're looking for in a place to stay.
-    <br>Browse our listings, or use the search box above to narrow your search.
-  </p>
-  {{#link-to 'about' class="button"}}
-    About Us
-  {{/link-to}}
-</div> -->
-
-{{#each model as |item|}}
-  <article class="listing">
-    <h3>{{item.item_name}}</h3>
-    <div class="detail owner">
-      <span>User:</span> {{item.user_id}}
+<div class="content">
+  <div class="layout-row layout-wrap">
+    {{#each model as |item|}}
+    <div class="flex-25 ">
+      {{#paper-card as |card|}}
+      {{card.image src="https://www.placecage.com/200/300" alt="Washed Out" title="Washed Out"}}
+      {{#card.title as |title|}}
+      {{#title.text as |text|}}
+      {{#text.headline}}{{item.item_name}}{{/text.headline}}
+      {{/title.text}}
+      {{/card.title}}
+      {{#card.content}}
+      <p>
+        {{item.item_desc}}
+      </p>
+      {{/card.content}}
+      {{#card.actions}}
+      {{#paper-button}}Contact{{/paper-button}}
+      {{#paper-button}}Buy{{/paper-button}}
+      {{/card.actions}}
+      {{/paper-card}}
     </div>
-    <div class="detail type">
-      <span>Description:</span> {{item.item_desc}}
-    </div>
-    <div class="detail location">
-      <span>Price:</span> {{item.item_price}}
-    </div>
-  </article>
-{{/each}}
+    {{/each}}
+  </div>
+</div>
