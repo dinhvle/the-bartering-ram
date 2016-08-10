@@ -1,0 +1,12 @@
+// Define desired color palettes.
+// $primary: "grey";
+// $accent: "pink";
+// $warn: "red";
+
+// Import the rest of ember-paper.
+@import "ember-paper";
+
+// Custom
+.nav-login {
+  margin-left: auto;
+}
