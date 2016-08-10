@@ -14,10 +14,10 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline'",
+      'script-src': "*",
       'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
       'font-src': "'self' fonts.gstatic.com",
-      'connect-src': "'self' http://127.0.0.1:3000/",
+      'connect-src': "*",
       'img-src': "'self' data:",
       'media-src': "'self'"
     },
