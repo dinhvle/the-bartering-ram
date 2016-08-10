@@ -2,7 +2,7 @@ import Ember from 'ember';
 import JSONAPIAdapter from 'ember-data/adapters/json-api';
 
 export default JSONAPIAdapter.extend({
-  host:'http://localhost:3000',
+  host:'http://127.0.0.1:3000',
   namespace:'api/v1',
   session:Ember.service.inject(),
   headers:Ember.computed('session.token',() => {

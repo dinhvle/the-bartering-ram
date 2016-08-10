@@ -17,7 +17,7 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-inline'",
       'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
       'font-src': "'self' fonts.gstatic.com",
-      'connect-src': "'self' http://localhost:3000/",
+      'connect-src': "'self' http://127.0.0.1:3000/",
       'img-src': "'self' data:",
       'media-src': "'self'"
     },

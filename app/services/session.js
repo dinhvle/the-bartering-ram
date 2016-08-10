@@ -5,10 +5,10 @@ export default Ember.Service.extend({
   authenticate(log, pass){
     return Ember.$.ajax({
       method:'POST',
-      url:'http://localhost:3000/api/v1/auth/login',
+      url:'http://127.0.0.1:3000/api/v1/auth/login',
       data:{username:log, password:pass}
     }).then( info => {
-      this.set('token',info.access_token);
+      this.set('access_token',info.access_token);
     })
   }
 });

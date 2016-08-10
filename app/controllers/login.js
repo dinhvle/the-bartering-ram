@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  test:'Hello',
   username: null,
   password: null,
   session: Ember.inject.service(),
