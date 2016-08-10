@@ -10,18 +10,18 @@ test('should list available items.', function (assert) {
   });
 });
 
-test('should link to information about the company.', function (assert) {
+test('should link to login.', function (assert) {
   visit('/');
-  click('a:contains("About")');
+  click('a:contains("Login")');
   andThen(function () {
-    assert.equal(currentURL(), '/about', 'should navigate to about');
+    assert.equal(currentURL(), '/login', 'should navigate to login');
   });
 });
 
-test('should link to contact information.', function (assert) {
+test('should link to register.', function (assert) {
   visit('/');
-  click('a:contains("Contact")');
+  click('a:contains("Register")');
   andThen(function () {
-    assert.equal(currentURL(), '/contact', 'should navigate to contact');
+    assert.equal(currentURL(), '/register', 'should navigate to register');
   });
 });
