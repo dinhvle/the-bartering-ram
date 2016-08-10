@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import JSONAPIAdapter from 'ember-data/adapters/json-api';
 
 export default JSONAPIAdapter.extend({
@@ -7,6 +8,6 @@ export default JSONAPIAdapter.extend({
   headers:Ember.computed('session.token',() => {
     return {
       'Authorization':`Bearer ${this.get('session.token')}`
-    }
+    };
   })
 });

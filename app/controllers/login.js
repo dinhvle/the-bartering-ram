@@ -1,18 +1,18 @@
 import Ember from 'ember';
 
-export default Ember.controller.extend({
+export default Ember.Controller.extend({
+  test:'Hello',
   username: null,
   password: null,
   session: Ember.inject.service(),
   actions:{
     authenticate(){
-      this.get('sessions').authenticate(this.get('username'), this.get('password '))
+      this.get('session').authenticate(this.get('username'), this.get('password'))
         .then( () => {
           this.transitionToRoute('index');
         }, err => {
-          alert(err.responseText);
-          err
-        })
+          console.log('Something fucked up.');
+        });
     }
   }
 });
