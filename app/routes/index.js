@@ -52,7 +52,27 @@ let items = [{
 }];
 
 export default Ember.Route.extend({
+  auth:false,
+
   model() {
-    return items;
+    return {
+      items:items,
+      isAuth:false
+    };
+  },
+  session: Ember.inject.service(),
+  actions: {
+    isAuth: function(){
+      if (this.get('session').access_token === 'Have you a token.'){
+        return true;
+      }
+      return false;
+    },
+    toLogin: function(){
+      this.transitionToRoute('login');
+    },
+    toItem: function(){
+      this.transitionToRoute('show');
+    }
   }
 });

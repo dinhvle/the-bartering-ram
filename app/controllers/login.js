@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
         .then( () => {
           this.transitionToRoute('index');
         }, err => {
-          console.log('Something fucked up.');
+          console.log(err);
         });
     }
   }
