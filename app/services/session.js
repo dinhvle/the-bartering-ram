@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   access_token:null,
+  user_id:null,
   authenticate(log, pass){
     return Ember.$.ajax({
       method:'POST',
