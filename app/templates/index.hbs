@@ -5,7 +5,6 @@
       {{#paper-card as |card|}}
       {{card.image src="https://www.placecage.com/200/300" alt="Washed Out" title="Washed Out"}}
       {{#card.title as |title|}}
-        {{#title.text as |text|}}
       {{#title.text as |text|}}
       {{#text.headline}}{{item.item_name}}{{/text.headline}}
       {{/title.text}}
@@ -20,7 +19,7 @@
         {{#paper-button}}Contact{{/paper-button}}
         {{#paper-button}}Buy{{/paper-button}}
       {{else}}
-        {{#paper-button action=toLogin}}Please Login!{{/paper-button}}
+        {{#paper-button href="/login"}}Login{{/paper-button}}
       {{/if}}
       {{/card.actions}}
       {{/paper-card}}
