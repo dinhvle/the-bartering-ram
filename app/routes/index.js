@@ -53,12 +53,6 @@ let items = [{
 
 export default Ember.Route.extend({
   auth:false,
-  beforeModel:function(){
-    if (this.get('session').access_token === 'Have you a token.'){
-      auth = true;
-    }
-  },
-
   model() {
     return {
       items:items,
