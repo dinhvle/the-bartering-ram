@@ -1,6 +1,6 @@
 <div class="content">
   <div class="layout-row layout-wrap">
-    {{#each model as |item|}}
+    {{#each model.items as |item|}}
     <div class="flex-25 item-card">
       {{#paper-card as |card|}}
       {{card.image src="https://www.placecage.com/200/300" alt="Washed Out" title="Washed Out"}}
@@ -15,8 +15,12 @@
       </p>
       {{/card.content}}
       {{#card.actions}}
-      {{#paper-button}}Contact{{/paper-button}}
-      {{#paper-button}}Buy{{/paper-button}}
+      {{#if model.isAuth}}
+        {{#paper-button}}Contact{{/paper-button}}
+        {{#paper-button}}Buy{{/paper-button}}
+      {{else}}
+        {{#paper-button href="/login"}}Login{{/paper-button}}
+      {{/if}}
       {{/card.actions}}
       {{/paper-card}}
     </div>
