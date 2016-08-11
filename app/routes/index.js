@@ -63,16 +63,29 @@ export default Ember.Route.extend({
   session: Ember.inject.service(),
   actions: {
     isAuth: function(){
+      // Doesn't work (yet), but checks to see if the users's access_token is correct.
+      // Did I mention how much I fucking hate ember? So sorry, dude. :s
       if (this.get('session').access_token === 'Have you a token.'){
         return true;
       }
       return false;
     },
     toLogin: function(){
+      // Change this to a link-to in the index.hbs
       this.transitionToRoute('login');
     },
     toItem: function(){
+      // Might use this to create a bool, if true show modal for item with
+      // larger image size. Show route created just in case! Might just use
+      // a component for it tho.
       this.transitionToRoute('show');
+    },
+    contactSeller: function(){
+      // Make get userID from current index of item on list.
+
+        // Use a service to create a route to contact user
+        // Make http post request to submit, redirect/show modal.
     }
+
   }
 });
