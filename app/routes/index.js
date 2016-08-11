@@ -56,7 +56,7 @@ export default Ember.Route.extend({
   model() {
     return {
       items:items,
-      isAuth:false
+      isAuth:this.get('session').isAuth
     };
   },
   session: Ember.inject.service(),
