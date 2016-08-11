@@ -1,6 +1,13 @@
-import DS from 'ember-data';
+import Ember from 'ember';
+import JSONAPIAdapter from 'ember-data/adapters/json-api';
 
-export default DS.RESTAdapter.extend({
-  namespace: 'api/v1',
-  host: 'http://localhost:3000'
+export default JSONAPIAdapter.extend({
+  host:'https://127.0.0.1:3000',
+  namespace:'api/v1',
+  session:Ember.service.inject(),
+  headers:Ember.computed('session.token',() => {
+    return {
+      'Authorization':`Bearer ${this.get('session.access_token')}`
+    };
+  })
 });
