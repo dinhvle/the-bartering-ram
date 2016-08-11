@@ -1,5 +1,4 @@
 import Ember from 'ember';
-// import JSONAPIAdapter from 'ember-data/adapters/json-api';
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
