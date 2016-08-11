@@ -80,11 +80,16 @@ export default Ember.Route.extend({
       // a component for it tho.
       this.transitionToRoute('show');
     },
-    contactSeller: function(){
+    contactSeller: function(user_id){
       // Make get userID from current index of item on list.
-
-        // Use a service to create a route to contact user
-        // Make http post request to submit, redirect/show modal.
+      // Does this need to be a service?
+      Ember.$.ajax({
+        url:`https://127.0.0.1:3000/api/v1/users/${user_id}/message`, // Need to make API route.
+        method:'POST',
+        data:user_id
+      }).then( info => {
+        // Do the thing.
+      });
     }
 
   }
