@@ -59,11 +59,10 @@ export default Ember.Route.extend({
         listings = foundList;
       });
   },
-
   model() {
     return {
-      items:listings
-      isAuth:false
+      items:listings,
+      isAuth:this.get('session').isAuth
     };
   },
   session: Ember.inject.service(),

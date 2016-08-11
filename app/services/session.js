@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Service.extend({
   access_token:null,
   user_id:null,
+  isAuth:false,
   authenticate(log, pass){
     return Ember.$.ajax({
       method:'POST',
@@ -10,6 +11,9 @@ export default Ember.Service.extend({
       data:{username:log, password:pass}
     }).then( info => {
       this.set('access_token',info.access_token);
+      if (this.access_token === "Have you a token."){
+        this.isAuth = true;
+      }
     });
   }
 });
