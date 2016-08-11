@@ -13,6 +13,8 @@ export default Ember.Service.extend({
       this.set('access_token',info.access_token);
       if (this.access_token === "Have you a token."){
         this.isAuth = true;
+
+        //TODO: Store username and ID in the session..
       }
     });
   }

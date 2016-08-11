@@ -67,35 +67,6 @@ export default Ember.Route.extend({
   },
   session: Ember.inject.service(),
   actions: {
-    isAuth: function(){
-      // Doesn't work (yet), but checks to see if the users's access_token is correct.
-      // Did I mention how much I fucking hate ember? So sorry, dude. :s
-      if (this.get('session').access_token === 'Have you a token.'){
-        return true;
-      }
-      return false;
-    },
-    toLogin: function(){
-      // Change this to a link-to in the index.hbs
-      this.transitionToRoute('login');
-    },
-    toItem: function(){
-      // Might use this to create a bool, if true show modal for item with
-      // larger image size. Show route created just in case! Might just use
-      // a component for it tho.
-      this.transitionToRoute('show');
-    },
-    contactSeller: function(user_id){
-      // Make get userID from current index of item on list.
-      // Does this need to be a service?
-      Ember.$.ajax({
-        url:`https://127.0.0.1:3000/api/v1/users/${user_id}/message`, // Need to make API route.
-        method:'POST',
-        data:user_id
-      }).then(() => {
-        console.log(info);
-      });
-    }
-
+    // Do the thing.
   }
 });
