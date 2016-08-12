@@ -1,1 +1,15 @@
-<h1>What the fuck's good.</h1>
+<!-- <button {{action "test" on="click"}}>{{paper-icon "mail outline"}}</button> -->
+{{#paper-button onClick=(action "test")}}Contact{{/paper-button}}
+
+{{#if showContact}}
+  {{#paper-dialog fullscreen=fullscreen origin=dialogOrigin}}
+    {{#paper-dialog-content}}
+      <h2>Contact Seller</h2>
+      <p>From: {{model.user_id}}</p>
+      <p>{{paper-input value=message_title label="Subject" onChange=(action (mut message_title))}}</p>
+      <p>{{paper-input value=message_body label="Message" onChange=(action (mut message_body))}}</p>
+
+      {{#paper-button onClick=(action "close")}}Button.{{/paper-button}}
+    {{/paper-dialog-content}}
+  {{/paper-dialog}}
+{{/if}}

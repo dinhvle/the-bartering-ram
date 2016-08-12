@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  showContact:false,
   model(){
     return {
       greeting:'Hello'
@@ -23,6 +24,16 @@ export default Ember.Component.extend({
         console.log('Message sent.');
         //Clear the dialogue.
       });
+    },
+
+    test(){
+      this.set('showContact', true);
+    },
+
+    close(){
+      this.set('showContact', false);
     }
+
+
   }
 });
