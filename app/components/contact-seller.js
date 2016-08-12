@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   showContact:false,
   model(){
     return {
-      greeting:'Hello'
+      username:this.get('session').username
     }
   },
   session: Ember.inject.service(),
@@ -12,21 +12,20 @@ export default Ember.Component.extend({
   actions:{
     sendMessage: function(receiver, title, message){
       Ember.$.ajax({
-        url:'https://q3api.herokuapp.com/',
+        url:'https://q3api.herokuapp.com/api/v1/messages',
         method:'post',
         data:{
-          sender_id:this.get('session').isAuth,
+          sender_id:this.get('session').user_id,
           receiver_id:receiver,
           message_title:title,
           message_body:body
         }
       }).then( () => {
-        console.log('Message sent.');
-        //Clear the dialogue.
+        this.set('showContact', false);
       });
     },
 
-    test(){
+    open(){
       this.set('showContact', true);
     },
 

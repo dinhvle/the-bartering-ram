@@ -8,7 +8,7 @@ export default Ember.Service.extend({
   authenticate(log, pass){
     return Ember.$.ajax({
       method:'POST',
-      url:'http://127.0.0.1:3000/api/v1/auth/login',
+      url:'https://q3api.herokuapp.com/api/v1/auth/login',
       data:{username:log, password:pass}
     }).then( info => {
       this.set('access_token',info.access_token);
@@ -16,7 +16,6 @@ export default Ember.Service.extend({
         this.set('username', info.username);
         this.set('user_id',info.user_id);
         this.isAuth = true;
-        //TODO: Store username and ID in the session..
       }
     });
   }

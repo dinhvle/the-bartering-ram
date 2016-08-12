@@ -1,15 +1,20 @@
 <!-- <button {{action "test" on="click"}}>{{paper-icon "mail outline"}}</button> -->
-{{#paper-button onClick=(action "test")}}Contact{{/paper-button}}
+{{#paper-button onClick=(action "open")}}Contact{{/paper-button}}
 
 {{#if showContact}}
   {{#paper-dialog fullscreen=fullscreen origin=dialogOrigin}}
     {{#paper-dialog-content}}
       <h2>Contact Seller</h2>
       <p>From: {{model.user_id}}</p>
+      <p>To: {{toUser}}</p>
       <p>{{paper-input value=message_title label="Subject" onChange=(action (mut message_title))}}</p>
       <p>{{paper-input value=message_body label="Message" onChange=(action (mut message_body))}}</p>
 
-      {{#paper-button onClick=(action "close")}}Button.{{/paper-button}}
     {{/paper-dialog-content}}
+
+    {{#paper-dialog-actions}}
+      {{#paper-button onClick=(action "close")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "sendMessage") primary=true}}Send{{/paper-button}}
+    {{/paper-dialog-actions}}
   {{/paper-dialog}}
 {{/if}}
