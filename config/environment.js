@@ -18,7 +18,7 @@ module.exports = function(environment) {
       'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
       'font-src': "'self' fonts.gstatic.com",
       'connect-src': "*",
-      'img-src': "www.placecage.com data:",
+      'img-src': "'self' * all data:",
       'media-src': "'self'"
     },
     APP: {
