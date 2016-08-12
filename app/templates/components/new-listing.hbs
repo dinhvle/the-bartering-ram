@@ -1,1 +1,8 @@
-{{yield}}
+<div class="layout-column flex">
+  {{paper-input flex=20 value=item_name label="Item Name" onChange=(action (mut item_name))}}
+  {{paper-input flex=20 value=item_desc label="Item Description" onChange=(action (mut item_desc))}}
+  {{paper-input flex=20 value=price label="Price" onChange=(action (mut price))}}
+  {{paper-input flex=20 value=img_url label="Image URL" onChange=(action (mut img_url))}}
+
+  <button {{action "newPost" 1 item_name item_desc price img_url}}> Add Post!</button>
+</div>
