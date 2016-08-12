@@ -15,7 +15,7 @@
           </p>
         {{/card.content}}
         {{#card.actions}}
-          {{contact-seller toUser=item.user_id}}
+          {{contact-seller toUser=item.user_id username=model.username}}
 
           {{#paper-button}}Buy{{/paper-button}}
         {{/card.actions}}

@@ -13,7 +13,8 @@ export default Ember.Route.extend({
         items:list,
         isAuth:this.get('session').isAuth,
         showContact:this.newMessage,
-        newListing:this.newListing
+        newListing:this.newListing,
+        username:this.get('session').username
       };
     });
   },
