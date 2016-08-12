@@ -11,5 +11,11 @@ export default Ember.Route.extend({
         users:info
       };
     });
+  },
+
+  actions:{
+    test(){
+      console.log('');
+    }
   }
 });
