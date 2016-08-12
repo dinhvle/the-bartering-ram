@@ -3,11 +3,14 @@
     {{#link-to 'index'}}
       {{#paper-button}}The Bartering Ram{{/paper-button}}
     {{/link-to}}
+    {{#link-to 'users'}}
+      {{#paper-button}}Users{{/paper-button}}
+    {{/link-to}}
     {{#if isAuth}}
       {{#paper-button}}New Listing{{/paper-button}}
       {{#paper-button}}My Listings{{/paper-button}}
     {{/if}}
-    
+
     <div class="nav-login">
       {{#if isAuth}}
         {{#paper-button action='logout'}}Logout{{/paper-button}}

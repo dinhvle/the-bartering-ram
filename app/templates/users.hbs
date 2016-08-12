@@ -1,0 +1,15 @@
+<h1>Users</h1>
+{{#paper-list class="md-whiteframe-z1"}}
+  {{#each model.users as |user|}}
+
+    {{#paper-item class="md-3-line"}}
+      <img src="{{user.avatar_url}}" height="75px" width="75px" style="border-radius:50%">
+      <div class="md-list-item-text">
+        <h3>{{user.username}}</h3>
+        <p>{{user.location}}</p>
+      </div>
+      {{paper-divider inset=true}}
+    {{/paper-item}}
+
+  {{/each}}
+{{/paper-list}}
