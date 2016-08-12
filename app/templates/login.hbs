@@ -1,8 +1,6 @@
-
-{{input name="username" placeholder="Login" value=username}}
-
-{{input name="password" placeholder="Password" type="password" value=password}}
-
-<button {{action 'authenticate'}}>Login</button>
-
+<div class="form" layout="column">
+  {{paper-input flex=25 label="Username" value=username onChange=(action (mut username))}}
+  {{paper-input flex=25 label="Password" value=password onChange=(action (mut password)) type="password"}}
+  {{#paper-button flex=25 raised=true onClick=(action "authenticate")}}Login{{/paper-button}}
+</div>
 {{outlet}}
