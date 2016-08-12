@@ -1,8 +1,19 @@
-<div class="layout-column flex">
-  {{paper-input flex=20 value=item_name label="Item Name" onChange=(action (mut item_name))}}
-  {{paper-input flex=20 value=item_desc label="Item Description" onChange=(action (mut item_desc))}}
-  {{paper-input flex=20 value=price label="Price" onChange=(action (mut price))}}
-  {{paper-input flex=20 value=img_url label="Image URL" onChange=(action (mut img_url))}}
+{{#paper-button onClick=(action "showPost")}}NEW LISTING{{/paper-button}}
 
-  <button {{action "newPost" 1 item_name item_desc price img_url}}> Add Post!</button>
-</div>
+{{#if canPost}}
+  {{#paper-dialog fullscreen=fullscreen origin=dialogOrigin}}
+
+    {{#paper-dialog-content}}
+    <h2>Add Listing</h2>
+      <p>{{paper-input value=item_name label="Item Name" onChange=(action (mut item_name))}}</p>
+      <p>{{paper-input value=item_desc label="Item Description" onChange=(action (mut item_desc))}}</p>
+      <p>{{paper-input value=price label="Price" onChange=(action (mut price))}}</p>
+      <p>{{paper-input value=img_url label="Image URL" onChange=(action (mut img_url))}}</p>
+    {{/paper-dialog-content}}
+
+    {{#paper-dialog-actions}}
+      {{#paper-button onClick=(action "cancel") }}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "newPost" 1 item_name item_desc price img_url) primary=true}}Submit{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}

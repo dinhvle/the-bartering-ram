@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   session: Ember.inject.service(),
+  canPost:false,
   model(){
     return{
       user_id:this.get('session').username, //this.get('session').user_id
@@ -23,8 +24,15 @@ export default Ember.Component.extend({
           img_url:image
         }
       }).then( () => {
-        console.log('New listing added.');
+        this.set('canPost',false);
       })
+    },
+    showPost(){
+      this.set('canPost', true);
+    },
+
+    cancel(){
+      this.set('canPost', false);
     }
   }
 });
