@@ -1,10 +1,7 @@
-<div class="layout-column flex">
+<div class="form" layout="column">
   {{paper-input flex=25 label="Username" value=username onChange=(action (mut username))}}
   {{paper-input flex=25 label="Password" value=password onChange=(action (mut password)) type="password"}}
   {{paper-input flex=25 label="Avatar Url" value=avatar_url onChange=(action (mut avatar_url))}}
   {{paper-input flex=25 label="Location" value=location onChange=(action (mut location))}}
-</div>
-
-<div>
   <button {{action "onSubmit" username password avatar_url location}} class="button">Submit</button>
 </div>
