@@ -3,7 +3,7 @@
     {{#each model.items as |item|}}
     <div class="flex-25 item-card">
       {{#paper-card as |card|}}
-        {{card.image src="https://www.placecage.com/200/300" alt="Washed Out" title="Washed Out"}}
+        {{card.image src=item.img_url alt="Washed Out" title="Washed Out"}}
         {{#card.title as |title|}}
           {{#title.text as |text|}}
             {{#text.headline}}{{item.item_name}}{{/text.headline}}
@@ -23,7 +23,3 @@
     {{/each}}
   </div>
 </div>
-
-{{#each model as |item|}}
-	{{item.content}}
-{{/each}}
