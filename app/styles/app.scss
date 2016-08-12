@@ -1,7 +1,7 @@
 // Define desired color palettes.
-// $primary: "grey";
-// $accent: "pink";
-// $warn: "red";
+$primary: "blue-grey";
+$accent: "pink";
+$warn: "red";
 
 // Import the rest of ember-paper.
 @import "ember-paper";
@@ -13,4 +13,5 @@
 
 .content {
   padding: 5%;
+  background-color: #eee8d5;
 }
