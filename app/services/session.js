@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Service.extend({
   access_token:null,
   user_id:null,
+  username:null,
   isAuth:false,
   authenticate(log, pass){
     return Ember.$.ajax({
@@ -12,8 +13,9 @@ export default Ember.Service.extend({
     }).then( info => {
       this.set('access_token',info.access_token);
       if (this.access_token === "Have you a token."){
+        this.set('username', info.username);
+        this.set('user_id',info.user_id);
         this.isAuth = true;
-
         //TODO: Store username and ID in the session..
       }
     });
