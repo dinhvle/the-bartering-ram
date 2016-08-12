@@ -2,9 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   model(){
-
+    return {
+      greeting:'Hello'
+    }
   },
-  session: Ember.service.inject(),
+  session: Ember.inject.service(),
 
   actions:{
     sendMessage: function(receiver, title, message){

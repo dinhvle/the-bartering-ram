@@ -18,9 +18,8 @@ export default Ember.Component.extend({
       this.get('session').isAuth = false;
       this.redirectTo('index');
     },
-    didUpdate: function(){
-      console.log(this.get('session').isAuth, 'Did transition.');
-      this.set('isAuth', true)
+    willUpdate: function(){
+      // Add observer to isAuth;
     }
   }
 
