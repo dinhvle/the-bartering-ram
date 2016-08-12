@@ -1,11 +1,8 @@
-<div style="max-width:800px;max-height:810px;">
-  <div class="layout-column flex">
-    {{paper-input flex=25 label="Listing Title" value=item_name onChange=(action (mut item_name))}}
-    {{paper-input flex=25 label="Description" value=item_desc onChange=(action (mut item_desc))}}
-    {{paper-input flex=25 label="Price" value=price onChange=(action (mut price))}}
-  </div>
+<div class="layout-column flex">
+  {{paper-input flex=20 value=item_name label="Item Name" onChange=(action (mut item_name))}}
+  {{paper-input flex=20 value=item_desc label="Item Description" onChange=(action (mut item_desc))}}
+  {{paper-input flex=20 value=price label="Price" onChange=(action (mut price))}}
+  {{paper-input flex=20 value=img_url label="Image URL" onChange=(action (mut img_url))}}
 
-  <div>
-    <button {{action "onSubmit" item_name item_desc price}} class="button">Submit</button>
-  </div>
+  <button {{action "newPost" 1 item_name item_desc price img_url}}> Add Post!</button>
 </div>

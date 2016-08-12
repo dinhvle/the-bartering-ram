@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
     authenticate(){
       this.get('session').authenticate(this.get('username'), this.get('password'))
         .then( () => {
-          console.log('Authenticating.');
+          console.log(this.get('session').isAuth);
           this.transitionToRoute('index');
         }, err => {
           console.log(err);
