@@ -88,6 +88,6 @@ export default Ember.Route.extend({
       }).then( info => {
         // Do the thing.
       });
-    }
+    }   
   }
 });
