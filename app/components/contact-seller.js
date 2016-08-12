@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   model(){
 
   },
-  session: Ember.service.inject();
+  session: Ember.service.inject(),
 
   actions:{
     sendMessage: function(receiver, title, message){
@@ -20,7 +20,7 @@ export default Ember.Component.extend({
       }).then( () => {
         console.log('Message sent.');
         //Clear the dialogue.
-      })
+      });
     }
   }
 });
