@@ -11,7 +11,7 @@ export default Ember.Component.extend({
   actions:{
     sendMessage: function(receiver, title, message){
       Ember.$.ajax({
-        url:'http://127.0.0.1:3000',
+        url:'https://q3api.herokuapp.com/',
         method:'post',
         data:{
           sender_id:this.get('session').isAuth,

@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   newListing:false,
   model() {
     return Ember.$.ajax({
-      url:'http://127.0.0.1:3000/api/v1/listings',
+      url:'https://q3api.herokuapp.com/api/v1/listings',
       method:'GET'
     }).then( list => {
       return {

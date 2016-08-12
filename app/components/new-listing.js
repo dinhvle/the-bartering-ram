@@ -13,7 +13,7 @@ export default Ember.Component.extend({
   actions:{
     newPost(user,title,body,price,image){
       Ember.$.ajax({
-        url:'http://127.0.0.1:3000/api/v1/listings',
+        url:'https://q3api.herokuapp.com/api/v1/listings',
         method:'POST',
         data:{
           user_id:user,

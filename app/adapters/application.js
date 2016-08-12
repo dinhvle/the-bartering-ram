@@ -2,7 +2,7 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-  host:'https://127.0.0.1:3000',
+  host:'https://q3api.herokuapp.com/',
   namespace:'api/v1',
   session:Ember.service.inject(),
   headers:Ember.computed('session.token',() => {
