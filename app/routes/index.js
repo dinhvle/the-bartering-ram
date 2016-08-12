@@ -11,11 +11,7 @@ export default Ember.Route.extend({
         items:list,
         isAuth:this.get('session').isAuth
       };
-    })
-
+    });
   },
-  session: Ember.inject.service(),
-  actions: {
-
-  }
+  session: Ember.inject.service()
 });
